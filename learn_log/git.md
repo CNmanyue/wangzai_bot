@@ -22,3 +22,11 @@ git push
 ssh-keygen
 # Win7中设置rsa的名称，Win10中只能识别id_rsa
 ```
+
+```
+# 创建并切换分支
+git checkout -b branchName
+
+# 查看分支
+git branch
+```
