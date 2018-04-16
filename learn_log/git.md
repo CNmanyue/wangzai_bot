@@ -27,6 +27,32 @@ ssh-keygen
 # 创建并切换分支
 git checkout -b branchName
 
+# 删除分支/强行删除用-D
+git branch -d branchName
+
 # 查看分支
 git branch
+
+# 推送本地分支到远程
+git push origin master
+
+# 设置本地分支与远程分支的关联
+git branch --set-upstream-to origin/dev dev
+
+# 检出远程分支到本地
+git checkout -b dev origin/dev
+
+# 保留当前工作现场：暂存
+git stash
+
+# 查看保存的工作现在
+git stash list
+
+# 恢复并删除暂存
+git stash pop
+
+# 应用暂存
+git stash apply
+# 删除暂存
+git stash drop
 ```
