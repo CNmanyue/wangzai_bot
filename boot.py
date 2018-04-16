@@ -23,8 +23,8 @@ from laifudao import joke
 
 token = '584347337:AAE0Q9hvVwPTckmZlSWY_xtuS1iIl5gd4I8'
 
-proxy = telegram.utils.request.Request(con_pool_size=10)
-# proxy = telegram.utils.request.Request(con_pool_size=10, proxy_url='https://127.0.0.1:1080')
+# proxy = telegram.utils.request.Request(con_pool_size=10)
+proxy = telegram.utils.request.Request(con_pool_size=10, proxy_url='https://127.0.0.1:1080')
 bot = telegram.Bot(token=token, request=proxy)
 print(bot.get_me())
 
