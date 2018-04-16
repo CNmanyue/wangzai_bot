@@ -17,5 +17,8 @@ $ git config --global user.email johndoe@example.com
 git push
 注意：
     github绑定公钥后，密钥对需要存在于~/.ssh
-    name.pub 结尾的邮箱地址要与配置的用户信息一致
+
+# 生成ssh并将pub添加到github
+ssh-keygen
+# Win7中设置rsa的名称，Win10中只能识别id_rsa
 ```
