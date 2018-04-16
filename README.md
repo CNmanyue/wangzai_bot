@@ -33,3 +33,14 @@ pip install cryptography
 1. [下载](https://github.com/UB-Mannheim/tesseract/wiki)
 1. ```path```中增加```C:\Program Files (x86)\Tesseract-OCR```
 2. 增加```TESSDATA_PREFIX```变量```C:\Program Files (x86)\Tesseract-OCR\tessdata```
+
+## commands
+
+### 已支持
+- gjj: 查询深圳公积金
+- joke: 讲个笑话
+- caps: 转换大写
+
+### 计划中
+- help: 手册
+- myt100: 猫眼电影Top100
