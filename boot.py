@@ -11,14 +11,18 @@
 """
 
 import logging
+from uuid import uuid4
 
 import telegram
-from telegram.ext import CommandHandler
+from telegram import InlineQueryResultArticle, InputTextMessageContent
+from telegram.ext import CommandHandler, InlineQueryHandler
 from telegram.ext import MessageHandler, Filters
 from telegram.ext import Updater
+from telegram.utils.helpers import escape_markdown
 from telegram.utils.request import Request
 
 from gjj import query
+from inline.query import query_bank
 from laifudao import joke
 
 token = '584347337:AAE0Q9hvVwPTckmZlSWY_xtuS1iIl5gd4I8'
@@ -111,6 +115,45 @@ def get_joke(bot, update, args):
 
 joke_handler = CommandHandler('joke', get_joke, pass_args=True)
 dispatcher.add_handler(joke_handler)
+
+
+def query_my_bank(bot, update):
+    """Handle the inline query."""
+    query_text = update.inline_query.query
+    results_src = query_bank(query_text)
+    results = []
+    for r in results_src:
+        results.append(InlineQueryResultArticle(
+            id=uuid4(),
+            title=r.get_name(),
+            input_message_content=InputTextMessageContent(r.get_name() + " " + r.get_card_no())
+        ))
+
+    # results = [
+    #     InlineQueryResultArticle(
+    #         id=uuid4(),
+    #         title="Caps",
+    #         input_message_content=InputTextMessageContent(
+    #             query.upper())),
+    #     InlineQueryResultArticle(
+    #         id=uuid4(),
+    #         title="Bold",
+    #         input_message_content=InputTextMessageContent(
+    #             "*{}*".format(escape_markdown(query)),
+    #             parse_mode=ParseMode.MARKDOWN)),
+    #     InlineQueryResultArticle(
+    #         id=uuid4(),
+    #         title="Italic",
+    #         input_message_content=InputTextMessageContent(
+    #             "_{}_".format(escape_markdown(query)),
+    #             parse_mode=ParseMode.MARKDOWN))]
+
+
+    update.inline_query.answer(results)
+
+
+mybank_handler = InlineQueryHandler(query_my_bank)
+dispatcher.add_handler(mybank_handler)
 
 # fire up bot
 update.start_polling()
