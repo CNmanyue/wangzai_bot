@@ -42,6 +42,9 @@ git branch --set-upstream-to origin/dev dev
 # 检出远程分支到本地
 git checkout -b dev origin/dev
 
+# 合并本地某分支到当前分支
+git merge branchName
+
 # 保留当前工作现场：暂存
 git stash
 
@@ -55,4 +58,11 @@ git stash pop
 git stash apply
 # 删除暂存
 git stash drop
+```
+
+```
+
+# 撤销已放入缓存区
+git rm --cached fileName
+
 ```

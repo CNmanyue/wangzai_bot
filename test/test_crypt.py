@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2018/4/13 16:36
 # @Author  : zhouxw
-# @File    : MyCryptUtil.py
+# @File    : crypt_util.py
 # @Software: PyCharm
 
 
