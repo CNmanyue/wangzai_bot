@@ -4,6 +4,7 @@ gjj/verify/
 */__pycache__/
 */*/__pycache__/
 
+*.log
 *.log.*
 
 .idea/
