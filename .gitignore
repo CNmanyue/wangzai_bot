@@ -6,3 +6,5 @@ gjj/verify/
 
 .idea/
 venv/
+
+*/config_override.py
