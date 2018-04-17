@@ -3,6 +3,7 @@ gjj/verify/
 */__pycache__/
 
 *.log.*
+*.log
 
 .idea/
 venv/
