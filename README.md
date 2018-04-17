@@ -44,3 +44,5 @@ pip install cryptography
 ### 计划中
 - help: 手册
 - myt100: 猫眼电影Top100
+- drift_bottle: 漂流瓶 
+- mybank: 内联查询银行卡号
